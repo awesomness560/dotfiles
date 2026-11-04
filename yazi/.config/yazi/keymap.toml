@@ -1,0 +1,4 @@
+[[mgr.prepend_keymap]]
+on   = ["i"]
+run  = "plugin hover-size"
+desc = "Calc size of hovered directory"

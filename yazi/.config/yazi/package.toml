@@ -1,0 +1,9 @@
+[[plugin.deps]]
+use = "pirafrank/what-size"
+rev = "1cb456f"
+hash = "7699acf73a1079f8a4afef5cec84ce73"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-mocha"
+rev = "1183892"
+hash = "ce320f877fe709b189433941aba747c4"

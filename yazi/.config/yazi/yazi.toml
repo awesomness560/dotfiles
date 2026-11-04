@@ -1,0 +1,46 @@
+[mgr]
+layout = [ 1, 4, 4 ]
+
+linemode = "mtime"
+
+sort_by = "natural"
+
+[opener]
+blend = [
+    { run = 'blender %s', orphan = true, desc = "Blender", for = "unix" },
+    { run = '/opt/goo-engine-4.4/blender %s', orphan = true, desc = "Goo Engine", for = "unix" },
+]
+play = [
+    { run = 'mpv --force-window %s', orphan = true, desc = "mpv", for = "unix" },
+    { run = 'audacity %s', orphan = true, desc = "Audacity", for = "unix" },
+]
+image = [
+    { run = 'loupe %s1', orphan = true, desc = "Image Viewer", for = "linux" },
+    { run = 'noctalia msg annotate %s1', orphan = true, desc = "Noctalia Image Annotator", for = "linux" },
+    { run = 'swappy -f %s1', orphan = true, desc = "Swappy", for = "linux" },
+    { run = 'krita %s', orphan = true, desc = "Krita", for = "linux" },
+]
+# pdf = [
+#     { run = 'zathura %s', orphan = true, desc = "Zathura" }
+# ]
+
+[[open.prepend_rules]]
+url = "*.blend"
+use  = [ "blend" ]
+
+[[open.prepend_rules]]
+mime = "audio/*"
+use = [ "play" ]
+
+[[open.prepend_rules]]
+mime = "image/*"
+use  = [ "image"]
+#
+# [[open.prepend_rules]]
+# url = "*.pdf"
+# use  = [ "pdf"]
+#
+
+# sort_by        = "mtime"
+# sort_reverse   = true
+# sort_dir_first = true
